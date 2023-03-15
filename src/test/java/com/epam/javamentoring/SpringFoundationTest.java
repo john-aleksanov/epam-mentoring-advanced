@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ActiveProfiles;
 
 import javax.sql.DataSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
+@ActiveProfiles("DEV")
 class SpringFoundationTest {
 
 	@Autowired
@@ -38,7 +40,7 @@ class SpringFoundationTest {
 
 		// THEN
 		assertThat(recordResult.next()).isTrue();
-		assertThat(dataSourceBeans.containsKey("customDataSource")).isTrue();
+		assertThat(dataSourceBeans.containsKey("devDataSource")).isTrue();
 	}
 
 }
