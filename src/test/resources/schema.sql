@@ -1,0 +1,1 @@
+create table temp(id integer, text varchar);

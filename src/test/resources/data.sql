@@ -1,0 +1,1 @@
+insert into temp values (1, 'text');
