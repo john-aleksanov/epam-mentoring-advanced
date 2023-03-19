@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenLocal()
+    }
+}
+
+rootProject.name = 'protocols'
+
+include 'grpc-server'
+include 'grpc-java-client'

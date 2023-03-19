@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id "com.pswidersk.python-plugin" version "2.3.0" apply false
+
+}
+
+group 'com.epam.javamentoring.protocols'
+version '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11;
+    targetCompatibility = JavaVersion.VERSION_11;
+}
+
+repositories {
+    mavenCentral()
+}
