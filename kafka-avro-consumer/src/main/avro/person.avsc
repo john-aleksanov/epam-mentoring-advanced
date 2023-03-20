@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Person",
+  "namespace": "com.epam.javamentoring.protocols.model",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    }
+  ]
+}

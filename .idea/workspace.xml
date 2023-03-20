@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49884720-a7f9-4dda-a6a2-7b3fca29d159" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,58 +27,44 @@
         <task path="$PROJECT_DIR$/grpc-server">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/kafka-avro-consumer">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
+                <item name="kafka-avro-consumer" type="2d1252cf:ModuleNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
+                <item name="kafka-avro-consumer" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
+                <item name="protocols-avro" type="f1a62948:ProjectNode" />
+                <item name="kafka-avro-consumer" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="protocols" type="f1a62948:ProjectNode" />
-                <item name="grpc-server" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -107,25 +81,11 @@
       </list>
     </option>
   </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="false" />
-    <option name="myAllFileTypesSelected" value="true" />
-    <option name="mySelectedFileTypes">
-      <set />
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="OptimizeOnSaveOptions">
-    <option name="myRunOnSave" value="false" />
-    <option name="myAllFileTypesSelected" value="true" />
-    <option name="mySelectedFileTypes">
-      <set />
-    </option>
   </component>
   <component name="ProjectId" id="2N09FbxOlp4hBPreZenONVe1y13" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -148,6 +108,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "go.import.settings.migrated": "true",
     "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/Evgeny_Aleksanov/IdeaProjects/epam/training/java-mentoring-advanced/spring-foundation/kafka-avro-consumer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -162,6 +123,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Evgeny_Aleksanov\IdeaProjects\epam\training\java-mentoring-advanced\spring-foundation\kafka-avro-consumer" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -169,7 +133,22 @@
       <recent name="com.epam.javamentoring" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GrpcServer">
+  <component name="RunManager" selected="Application.KafkaProducer">
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="protocols.grpc-server.test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="GrpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.javamentoring.protocols.grpcserver.GrpcServer" />
       <module name="protocols.grpc-server.main" />
@@ -183,52 +162,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mentoring-advanced:grpc-server [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/grpc-server" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildDependents" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="KafkaConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.javamentoring.protocols.KafkaConsumer" />
+      <module name="protocols-avro.kafka-avro-consumer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.javamentoring.protocols.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="mentoring-advanced:grpc-server [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/grpc-server" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildNeeded" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="KafkaProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.javamentoring.protocols.KafkaProducer" />
+      <module name="protocols-avro.kafka-avro-producer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.javamentoring.protocols.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="mentoring-advanced:grpc-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="spring-foundation [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/grpc-server" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -246,10 +209,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="mentoring-advanced:grpc-server [generateProto]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="spring-foundation:kafka-avro-consumer [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/grpc-server" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kafka-avro-consumer" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -257,7 +220,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="generateProto" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -274,28 +237,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="protocols.grpc-server.test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.spring-foundation [build]" />
+        <item itemvalue="Application.KafkaConsumer" />
+        <item itemvalue="Gradle.spring-foundation:kafka-avro-consumer [build]" />
+        <item itemvalue="Application.KafkaProducer" />
         <item itemvalue="Application.GrpcServer" />
-        <item itemvalue="Gradle.mentoring-advanced:grpc-server [build]" />
-        <item itemvalue="Gradle.mentoring-advanced:grpc-server [buildDependents]" />
-        <item itemvalue="Gradle.mentoring-advanced:grpc-server [generateProto]" />
-        <item itemvalue="Gradle.mentoring-advanced:grpc-server [buildNeeded]" />
       </list>
     </recent_temporary>
   </component>
@@ -311,6 +259,7 @@
       <workItem from="1678798399877" duration="2169000" />
       <workItem from="1678801514155" duration="290000" />
       <workItem from="1679161881163" duration="10898000" />
+      <workItem from="1679308565025" duration="11920000" />
     </task>
     <servers />
   </component>

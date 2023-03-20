@@ -1,11 +1,11 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        mavenLocal()
+        mavenCentral()
     }
 }
 
-rootProject.name = 'protocols'
+rootProject.name = 'protocols-avro'
 
-include 'grpc-server'
-include 'grpc-java-client'
+include 'kafka-avro-producer'
+include 'kafka-avro-consumer'

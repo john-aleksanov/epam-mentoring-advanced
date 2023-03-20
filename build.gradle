@@ -1,17 +1,31 @@
 plugins {
     id 'java'
-    id "com.pswidersk.python-plugin" version "2.3.0" apply false
-
+    id "com.github.davidmc24.gradle.plugin.avro" version "1.6.0"
 }
 
 group 'com.epam.javamentoring.protocols'
 version '1.0-SNAPSHOT'
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11;
-    targetCompatibility = JavaVersion.VERSION_11;
-}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.github.davidmc24.gradle.plugin.avro'
 
-repositories {
-    mavenCentral()
+    ext {
+        kafkaClientsVersion = '2.8.1'
+        confluentKafkaVersion = '7.3.2'
+        avroVersion = '1.10.2'
+    }
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://packages.confluent.io/maven/'
+        }
+    }
+
+    dependencies {
+        implementation "org.apache.kafka:kafka-clients:$kafkaClientsVersion"
+        implementation "io.confluent:kafka-avro-serializer:$confluentKafkaVersion"
+        implementation "org.apache.avro:avro:$avroVersion"
+    }
 }

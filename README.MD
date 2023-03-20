@@ -1,32 +1,34 @@
-# Overview
-This branch showcases a very simple gRPC Java server and two gRPC clients - written in Java and Python. The Java server
-and client are bundled into a multi-module Gradle project.
+'# Overview
+This branch showcases a very simple Kafka producer and consumer project that uses Avro. The producer and consumer are
+bundled into a multi-module Gradle project.
 To run the server and test the clients:
-1. Build the parent Gradle project running this command from the root:
+
+1. Run
+
+```shell
+docker compose up
+```
 
 
->./gradlew build
-   
-This will download all required dependencies and generate stubs for the Java classes
-using the proto compiler for the server and the Java client.
+from the project root. This will spin up three containers: Zookeeper, Kafka broker and Schema registry. If the schema
+registry container does not start, this is probably due to the fact that the Kafka broker container has not yet started.
+Then start the containers separately:
 
-2. To run the server, run the <code>main</code> method from the <code>GrpcServer</code> class in the Java server module.
-You should see 'Server started' in the console.
+```shell
+docker compose up zookeeper
+docker compose up kafka
+docker compose up schema-registry
+```
 
-3. To run the Java client, run the <code>main</code> method from the <code>GrpcJavaClient</code> class in the
-Java client module. You should see 'message: "Pong: Hello from the Java gRPC Client!"' in the console.
+2. Build and run the <code>KafkaConsumer</code> class. The Gradle Avro plugin will read the <code>person.avsc</code>
+file from the <code>avro</code> directory and generate the respective Java classes. When the consumer is started, you
+should see 'Consumer started' in the logs.
 
-4. To run the Python client:
+3. Build and run the <code>KafkaProducer</code> class. The Gradle Avro plugin will read the same <code>person.avsc</code>
+file from the <code>avro</code> directory and generate the respective Java classes. You should be able to see
 
-Firstly, install the required dependencies:
-> pip3 install grpcio grpcio-tools
+> Sent message: {"firstName": "Anakin", "lastName": "Skywalker"}
 
-From the <code>grpc-python-client/src/main/proto</code> folder run
-> python3 -m grpc_tools.protoc --python_out=../python --grpc_python_out=../python --proto_path=. ./ping.proto
+4. After some time, in the consumer logs you should be able to see:
 
-to generate stubs for the messages and the service in the proto file.
-
-Finally, from the <code>python</code> folder, run
-> python3 grpc_client.py
-
-You should see 'Received response: Pong: Hello from the Python gRPC Client!' in the console.
+> Received message: key 'Skywalker', value '{"firstName": "Anakin", "lastName": "Skywalker"}'

@@ -9,8 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/grpc-java-client" />
-            <option value="$PROJECT_DIR$/grpc-server" />
+            <option value="$PROJECT_DIR$/kafka-avro-consumer" />
+            <option value="$PROJECT_DIR$/kafka-avro-producer" />
           </set>
         </option>
       </GradleProjectSettings>
