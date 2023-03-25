@@ -1,0 +1,12 @@
+ext {
+    springDocVersion = '2.0.4'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocVersion"
+
+    implementation project(':jmp-dto')
+    implementation project(':jmp-service-api')
+    implementation project(':jmp-cloud-service-impl')
+}

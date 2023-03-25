@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'rest-api'
+
+include 'jmp-dto'
+include 'jmp-service-api'
+include 'jmp-cloud-service-impl'
+include 'jmp-service-rest'

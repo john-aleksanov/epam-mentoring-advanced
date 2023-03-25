@@ -1,0 +1,4 @@
+dependencies {
+    implementation project(':jmp-dto')
+    implementation project(':jmp-service-api')
+}
