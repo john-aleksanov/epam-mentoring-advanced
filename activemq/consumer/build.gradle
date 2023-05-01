@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    activemqVersion = '5.18.1'
+}
+dependencies {
+    implementation "org.apache.activemq:activemq-client:${activemqVersion}"
+}
+
+shadowJar {
+    archiveBaseName = 'activemq-consumer'
+    archiveClassifier = ''
+    archiveVersion = ''
+    manifest {
+        attributes 'Main-Class': 'com.epam.messaging.consumer.ConsumerApplication'
+    }
+}

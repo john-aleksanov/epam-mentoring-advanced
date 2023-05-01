@@ -1,0 +1,33 @@
+---
+version: '3'
+services:
+  broker:
+    image: rmohr/activemq
+    container_name: broker
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    networks:
+      - activemq
+
+  producer:
+    build: ./producer
+    image: producer
+    container_name: producer
+    networks:
+      - activemq
+    depends_on:
+      - broker
+
+  consumer:
+    build: ./consumer
+    image: consumer
+    container_name: consumer
+    networks:
+      - activemq
+    depends_on:
+      - broker
+
+networks:
+  activemq:
+    driver: bridge
