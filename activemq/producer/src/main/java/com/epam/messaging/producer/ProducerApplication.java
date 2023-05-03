@@ -11,7 +11,7 @@ public class ProducerApplication {
         var factory = new ActiveMQConnectionFactory("tcp://broker:61616");
         try (var connection = getConnection(factory);
              var session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-             var producer = session.createProducer(session.createQueue("HELLO_QUEUE"))) {
+             var producer = session.createProducer(session.createTopic("HELLO_TOPIC"))) {
             var message = session.createTextMessage("Luke, I'm your father");
             producer.send(message);
         } catch (JMSException e) {

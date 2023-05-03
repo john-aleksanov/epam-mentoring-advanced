@@ -9,8 +9,11 @@ This is a simple example written in Java of how to use the [ActiveMQ](http://act
 3. Run `docker-compose up consumer` to start the consumer. The consumer will receive the message, print it to the console and quit.
 
 # Notes
-The interaction goes through a queue, so this is a point-to-point communication. If we wanted to have a publish-subscribe communication,
-we would have used a topic instead of a queue.
+The interaction goes through a topic, and the subscriber is non-durable, meaning that if the subscriber is not running when the message is sent,
+the message will be lost. If the subscriber is running when the message is sent, the message will be received by the subscriber.
+If the subscriber is running and the message is sent before the subscriber has subscribed to the topic, the message will be lost.
+So you'll have to run the subscriber first and then the producer.
+
 This is a very simple example just to showcase the usage of the Java ActiveMQ client library. As such, many shortcuts have been taken
 and things have been hardcoded. For example, the broker URL is hardcoded in the producer and consumer, as well as the queue name is hardcoded.
 If this was a production project, these would have been configurable. I would also have used a dependency injection framework like Dagger

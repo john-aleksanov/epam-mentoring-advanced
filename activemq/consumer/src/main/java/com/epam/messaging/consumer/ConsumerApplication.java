@@ -11,7 +11,7 @@ public class ConsumerApplication {
         var factory = new ActiveMQConnectionFactory("tcp://broker:61616");
         try (var connection = getConnection(factory);
              var session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-             var consumer = session.createConsumer(session.createQueue("HELLO_QUEUE"))) {
+             var consumer = session.createConsumer(session.createTopic("HELLO_TOPIC"))) {
             var message = consumer.receive();
             System.out.println(message);
         } catch (JMSException e) {
