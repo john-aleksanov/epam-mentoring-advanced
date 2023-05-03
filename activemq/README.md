@@ -5,14 +5,17 @@ This is a simple example written in Java of how to use the [ActiveMQ](http://act
 # Usage
 1. Run `docker-compose up broker` to start the ActiveMQ broker. The broker will be available at `tcp://localhost:61616`.
     The UI will be available at `http://localhost:8161/admin/` (username: `admin`, password: `admin`).
-2. Run `docker-compose up producer` to start the producer. The producer will send a single message to the broker and quit.
-3. Run `docker-compose up consumer` to start the consumer. The consumer will receive the message, print it to the console and quit.
+2. Run `docker-compose up consumer` to start the consumer. The consumer will subscribe to the topic.
+3. Quit the consumer.
+4. Run `docker-compose up producer` to start the producer. The producer will send a single message to the broker and quit.
+5. Run the consumer again. The consumer will receive the message sent by the producer and print it to the console, even
+    though it was offline.
 
 # Notes
-The interaction goes through a topic, and the subscriber is non-durable, meaning that if the subscriber is not running when the message is sent,
-the message will be lost. If the subscriber is running when the message is sent, the message will be received by the subscriber.
-If the subscriber is running and the message is sent before the subscriber has subscribed to the topic, the message will be lost.
-So you'll have to run the subscriber first and then the producer.
+The interaction goes through a topic, and the subscriber is durable, meaning that it will receive all messages sent to the topic
+even if it is offline. This is achieved by setting the `clientId` and `durableSubscriptionName` properties on the `ActiveMQConnectionFactory`.
+That said, the consumer will only receive messages sent after it has subscribed to the topic, so we run it first and quit
+to subscribe.
 
 This is a very simple example just to showcase the usage of the Java ActiveMQ client library. As such, many shortcuts have been taken
 and things have been hardcoded. For example, the broker URL is hardcoded in the producer and consumer, as well as the queue name is hardcoded.

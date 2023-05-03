@@ -5,13 +5,14 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.Connection;
 import javax.jms.JMSException;
 import javax.jms.Session;
+import java.util.function.Consumer;
 
 public class ConsumerApplication {
     public static void main(String[] args) {
-        var factory = new ActiveMQConnectionFactory("tcp://broker:61616");
+        var factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
         try (var connection = getConnection(factory);
              var session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-             var consumer = session.createConsumer(session.createTopic("HELLO_TOPIC"))) {
+             var consumer = session.createDurableSubscriber(session.createTopic("HELLO_TOPIC"), "DURABLE_SUBSCRIBER")) {
             var message = consumer.receive();
             System.out.println(message);
         } catch (JMSException e) {
@@ -21,6 +22,7 @@ public class ConsumerApplication {
 
     private static Connection getConnection(ActiveMQConnectionFactory factory) throws JMSException {
         var connection = factory.createConnection();
+        connection.setClientID("DURABLE_SUBSCRIBER");
         connection.start();
         return connection;
     }
