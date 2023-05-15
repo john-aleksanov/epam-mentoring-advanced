@@ -1,0 +1,79 @@
+{
+  "rabbit_version": "3.9.0",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "feCcSu4gblfPI7YqZ5XJqlxFSblmmmUCG+J5EXOef/JjlAfh",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "notifications",
+      "type": "topic",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "failed_notifications",
+      "type": "topic",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues": [
+    {
+      "name": "luke_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "failed_messages",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "notifications",
+      "destination": "luke_queue",
+      "destination_type": "queue",
+      "vhost": "/",
+      "routing_key": "luke",
+      "arguments": {}
+    },
+    {
+      "source": "failed_notifications",
+      "destination": "failed_messages",
+      "destination_type": "queue",
+      "vhost": "/",
+      "routing_key": "#",
+      "arguments": {}
+    }
+  ]
+}
