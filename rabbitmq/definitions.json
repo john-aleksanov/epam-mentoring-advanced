@@ -40,6 +40,15 @@
       "auto_delete": false,
       "internal": false,
       "arguments": {}
+    },
+    {
+      "name": "retry_exchange",
+      "type": "direct",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
     }
   ],
   "queues": [
@@ -56,6 +65,17 @@
       "durable": true,
       "auto_delete": false,
       "arguments": {}
+    },
+    {
+      "name": "retry_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 10000,
+        "x-dead-letter-exchange": "notifications",
+        "x-dead-letter-routing-key": "luke"
+      }
     }
   ],
   "bindings": [
@@ -73,6 +93,14 @@
       "destination_type": "queue",
       "vhost": "/",
       "routing_key": "#",
+      "arguments": {}
+    },
+    {
+      "source": "retry_exchange",
+      "destination": "retry_queue",
+      "destination_type": "queue",
+      "vhost": "/",
+      "routing_key": "retry",
       "arguments": {}
     }
   ]

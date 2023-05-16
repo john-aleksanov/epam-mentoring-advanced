@@ -9,11 +9,11 @@ This is a simple example written in Java of how to use the RabbitMQ client libra
     The latter file contains the definitions of the exchanges, queues and bindings that will be created when the broker starts.
 2. Run the consumer from IntelliJ to start the consumer. It will subscribe to the `notification` topic. The consumer is
     configured to receive a message and immediately throw an exception such that retry logic can be tested. The retry logic
-    is to retry processing three times with a one-second delay between retries. After that, the message will be sent
-    by the consumer to a failed notifications exchange that is linked to a failed queue.
+    is to send the message to the retry exchange -> retry queue. If, after three processing attempts, the message is still
+    not processed successfully, it will be sent to the `failed_messages` queue.
 3. Run the producer from IntelliJ to start the producer. It will expose an `POST api/message` endpoint that will send 
     a message to the `notification` exchange. You can send any conforming message through the endpoint. Then, observe the
-    consumer console to see the message retry three times and fail. Then, observe RabbitMQ UI to see the message in the
+    consumer console to see the message retry three times and fail. Observe RabbitMQ UI to see the message in the
     `failed_messages` queue.
 
 # Notes
