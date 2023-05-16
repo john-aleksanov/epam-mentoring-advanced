@@ -49,11 +49,32 @@
       "auto_delete": false,
       "internal": false,
       "arguments": {}
+    },
+    {
+      "name": "luke_dead_letter_exchange",
+      "type": "direct",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
     }
   ],
   "queues": [
     {
       "name": "luke_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-message-ttl": 10000,
+        "x-max-length": 1,
+        "x-dead-letter-exchange": "luke_dead_letter_exchange",
+        "x-dead-letter-routing-key": "luke_failed"
+      }
+    },
+    {
+      "name": "luke_dlq",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
@@ -101,6 +122,14 @@
       "destination_type": "queue",
       "vhost": "/",
       "routing_key": "retry",
+      "arguments": {}
+    },
+    {
+      "source": "luke_dead_letter_exchange",
+      "destination": "luke_dlq",
+      "destination_type": "queue",
+      "vhost": "/",
+      "routing_key": "luke_failed",
       "arguments": {}
     }
   ]

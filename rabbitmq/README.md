@@ -7,14 +7,11 @@ This is a simple example written in Java of how to use the RabbitMQ client libra
     The UI will be available at `http://localhost:15762` (username: `admin`, password: `admin`).
     Docker will mount a volume to persist the data as well as to read two configuration files - `rabbitmq.conf` and `definitions.json`.
     The latter file contains the definitions of the exchanges, queues and bindings that will be created when the broker starts.
-2. Run the consumer from IntelliJ to start the consumer. It will subscribe to the `notification` topic. The consumer is
-    configured to receive a message and immediately throw an exception such that retry logic can be tested. The retry logic
-    is to send the message to the retry exchange -> retry queue. If, after three processing attempts, the message is still
-    not processed successfully, it will be sent to the `failed_messages` queue.
-3. Run the producer from IntelliJ to start the producer. It will expose an `POST api/message` endpoint that will send 
-    a message to the `notification` exchange. You can send any conforming message through the endpoint. Then, observe the
-    consumer console to see the message retry three times and fail. Observe RabbitMQ UI to see the message in the
-    `failed_messages` queue.
+    `luke_queue` is configured with a ttl of 10 seconds and a size of 1 message. 
+2. Run the producer from IntelliJ to start the producer. It will expose an `POST api/message` endpoint that will send 
+    a message to the `notification` exchange. Send any conforming message through the endpoint and observe the message to
+    come to `luke_queue` first and go to `luke_dlq` after 10 seconds. Send 2-3 more messages at once and observe the first
+    come to `luke_queue` and the rest to `luke_dlq` immediately.
 
 # Notes
 This is a very simple example just to showcase the usage of the Java RabbitMQ client library. As such, many shortcuts have been taken
